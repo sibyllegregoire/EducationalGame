@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\winLose.cs" />
+    <Compile Include="Assets\RocketMovements.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
