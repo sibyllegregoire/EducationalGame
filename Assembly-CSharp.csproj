@@ -47,6 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\MainMenu.cs" />
      <Compile Include="Assets\RocketMovements.cs" />
      <Compile Include="Assets\winLose.cs" />
  <Reference Include="UnityEngine">
