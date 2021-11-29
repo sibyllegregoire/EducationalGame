@@ -542,6 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1169019039}
   dialogueText: {fileID: 1325027993}
+  animator: {fileID: 2140898841}
 --- !u!4 &1142755584
 Transform:
   m_ObjectHideFlags: 0
@@ -945,6 +946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1819499004
 GameObject:
   m_ObjectHideFlags: 0
