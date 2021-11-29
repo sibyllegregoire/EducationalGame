@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{65DBB3EA-5839-3D04-3E7A-DDE01D4B2780}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DialogueManager.cs">
+    <Files>
+      <File FileName="Assets/DialogueManager.cs" Line="5" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EducationalGame" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="DialogueManager.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b0801a41-673c-4d26-9ad5-842e47c772b0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
