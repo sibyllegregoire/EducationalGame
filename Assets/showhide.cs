@@ -8,10 +8,13 @@ public class showhide : MonoBehaviour
     public GameObject explosion;
     public int Hard;
     public int Soft;
+    public int i = 0;
+    public int j = 1000;
     public void Awake()
     {
         explosion.SetActive(false);
     }
+    
 
     public void show()
     {

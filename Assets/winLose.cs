@@ -63,4 +63,14 @@ public class winLose : MonoBehaviour
             //Time.timeScale = 0f;
         }
     }
+
+    public void changescene()
+    {
+        SceneManager.LoadScene("Test");
+    }
+
+    public void changescene2()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }
