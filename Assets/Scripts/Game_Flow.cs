@@ -20,7 +20,7 @@ public class Game_Flow : MonoBehaviour
 
     public static string currentSelection;
     public static int textPointer = 1;
-    public IDictionary<string, bool> Palabras = new Dictionary<string, bool>();
+    public static IDictionary<string, bool> Palabras = new Dictionary<string, bool>();
 
     public static System.Random rng = new System.Random();
 
@@ -39,7 +39,7 @@ public class Game_Flow : MonoBehaviour
         int k = rng.Next(n + 1);
         int T = list1[k];
         list1[k] = list1[n];
-        list1[n] = T;
+        list1[n] = T; 
     }
 
 

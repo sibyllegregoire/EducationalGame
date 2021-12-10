@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class winLose : MonoBehaviour
 {
@@ -22,10 +23,12 @@ public class winLose : MonoBehaviour
     public Image star2;
     public bool star3ImgOn;
     public Image star3;
+    public Transform Image_Changer;
 
 
-	public void Awake()
+    public void Awake()
 	{
+        
 		Score = winLose.Score;
 		ScoreText.text = Score.ToString();
         
@@ -43,6 +46,18 @@ public class winLose : MonoBehaviour
     // Update is called once per frame
     public void Update()
 	{
+        if (Game_Flow.Palabras[Image_Changer.GetComponent<SpriteRenderer>().sprite.name]) {
+            Soft = 0;
+            Hard = 1;
+        }
+        else
+        {
+            Hard = 0;
+            Soft = 1;
+
+        }
+
+
         if(isRacing)
         txt.text = currentTime.ToString("#.00");
         currentTime= currentTime+Time.deltaTime;
