@@ -62,6 +62,13 @@ public class winLose : MonoBehaviour
         txt.text = currentTime.ToString("#.00");
         currentTime= currentTime+Time.deltaTime;
         
+        if(currentTime >= 5f)
+        {
+            isRacing = false;
+            Message.text = "You are to slow!";
+            
+
+        }
         if(Score >= 10)
 		{
             YouWin();
@@ -166,6 +173,7 @@ public class winLose : MonoBehaviour
                 
                 Message.text = "You're too slow!";
                 Debug.Log(ScoreText.text);
+                isRacing = false;
             }
 
         }
@@ -242,6 +250,7 @@ public class winLose : MonoBehaviour
             Message.text = "You are Wrong!";
             isRacing = false;
             currentTime = 0f;
+            isRacing = false;
 
 
 

@@ -12,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Primo
+  - secondo
+  - terzo
   - 
   - 
   - 
@@ -41,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 6
+    uniqueID: 88844779
+    locked: 0
+  - name: 7
+    uniqueID: 2708329719
+    locked: 0
+  - name: 8
+    uniqueID: 582580967
     locked: 0
