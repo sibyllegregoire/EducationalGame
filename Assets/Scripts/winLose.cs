@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.EventSystems;
 
 public class winLose : MonoBehaviour
 {
@@ -191,7 +192,9 @@ public class winLose : MonoBehaviour
     public void HardAddScore()
     {
         //currentTime = 0f;
+        
         if (Hard == 1)
+            
         {
             if (currentTime>0f  &&  currentTime<2f)
             {
