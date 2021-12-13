@@ -25,7 +25,9 @@ public class winLose : MonoBehaviour
     public bool star3ImgOn;
     public Image star3;
     public Transform Image_Changer;
-
+    public float MeanStars;
+    public static int countingwords;
+    public Text Words;
 
     public void Awake()
 	{
@@ -59,22 +61,39 @@ public class winLose : MonoBehaviour
         }
 
 
-        if(isRacing)
-        txt.text = currentTime.ToString("#.00");
-        currentTime= currentTime+Time.deltaTime;
-        
+
+        if (isRacing)
+        {
+            txt.text = currentTime.ToString("#.00");
+            currentTime= currentTime+Time.deltaTime;
+        }
+
         if(currentTime >= 5f)
         {
+            
             isRacing = false;
             Message.text = "You are to slow!";
+            countingwords++;
+            SceneManager.LoadScene("SampleScene");
+            Words.text = countingwords.ToString();
             
+        }
 
-        }
-        if(Score >= 10)
-		{
-            YouWin();
-            
-        }
+        
+        
+        if (countingwords == 10)
+        {
+            if(Stars >= 20f)
+            {
+                YouWin();
+                SceneManager.LoadScene("1to2");
+            }
+            else
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }  
+             
      }
     //void Start()
     
@@ -88,8 +107,8 @@ public class winLose : MonoBehaviour
         Time.timeScale = 0f;
         txt = GetComponent<Text>();
         isRacing = false;
-        Stars = Stars / Score;
-        if (Stars>0f  &&  Stars<1f)
+        MeanStars = Stars / Score;
+        if (MeanStars>0f  &&  MeanStars<1f)
         {
             Message.text = "Final Score";
             star1.enabled = true;
@@ -99,7 +118,7 @@ public class winLose : MonoBehaviour
             star3.enabled = false;
             star3ImgOn = false;
         }
-        if (Stars>1f  &&  Stars<2f)
+        if (MeanStars>1f  &&  MeanStars<2f)
         {
             Message.text = "Final Score";
             star1.enabled = true;
@@ -109,7 +128,7 @@ public class winLose : MonoBehaviour
             star3.enabled = false;
             star3ImgOn = false;
         }
-        if (Stars>2f  &&  Stars<3f)
+        if (MeanStars>2f  &&  MeanStars<3f)
         {
             Message.text = "Final Score";
             star1.enabled = true;
@@ -125,6 +144,7 @@ public class winLose : MonoBehaviour
     public void SoftAddScore()
     {
         //currentTime = 0f;
+        countingwords++;
         if (Soft == 1)
         {
             if (currentTime>0f  &&  currentTime<2f)
@@ -164,18 +184,19 @@ public class winLose : MonoBehaviour
                 star3ImgOn = false;
             }
             Score++;
+            
             ScoreText.text = Score.ToString();
             ScoreText.text = "You are right!";
             Debug.Log(ScoreText.text);
             isRacing = false;
             
-            if (currentTime >= 5f)
-            {
+            //if (currentTime >= 5f)
+            //{
                 
-                Message.text = "You're too slow!";
-                Debug.Log(ScoreText.text);
-                isRacing = false;
-            }
+              //  Message.text = "You're too slow!";
+               // Debug.Log(ScoreText.text);
+              //  isRacing = false;
+           // }
 
         }
         else
@@ -192,7 +213,7 @@ public class winLose : MonoBehaviour
     public void HardAddScore()
     {
         //currentTime = 0f;
-        
+        countingwords++;
         if (Hard == 1)
             
         {
@@ -240,11 +261,11 @@ public class winLose : MonoBehaviour
             Debug.Log(ScoreText.text);
             isRacing = false;
             //endTime = currentTime;
-            if (currentTime >= 5f)
-            {
-                Message.text = "You're too slow!";
-                Debug.Log(ScoreText.text);
-            }
+            //if (currentTime >= 5f)
+            //{
+             //   Message.text = "You're too slow!";
+              //  Debug.Log(ScoreText.text);
+          //  }
             currentTime = 0f;
         }
         else
