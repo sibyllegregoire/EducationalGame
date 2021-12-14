@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class winLose : MonoBehaviour
 {
     public static int Score;
-    public Text ScoreText;
+    //public Text ScoreText;
     public Text Message;
     public int Soft;
     public int Hard;
@@ -17,7 +17,7 @@ public class winLose : MonoBehaviour
     public float currentTime;
     public float endTime;
     public float Stars;
-    Text txt;
+    private Text txt;
     public bool star1ImgOn;
     public Image star1;
     public bool star2ImgOn;
@@ -27,19 +27,33 @@ public class winLose : MonoBehaviour
     public Transform Image_Changer;
     public float MeanStars;
     public static int countingwords;
-    public Text Words;
+    private Text Words;
+    public Text number;
+    public Text annoucement;
+    
+    
+
 
     public void Awake()
 	{
         
 		Score = winLose.Score;
-		ScoreText.text = Score.ToString();
+		//ScoreText.text = Score.ToString();
+        countingwords = winLose.countingwords;
+        MeanStars = 0f;
+        
+       
         
     	//DontDestroyOnLoad(this.gameObject);
-        txt = GetComponent<Text>();
+        txt = number.GetComponent<Text>();
+        Words = annoucement.GetComponent<Text>();
+        Words.text = countingwords.ToString();
+        Message= Message.GetComponent<Text>();
+        //Words.text = countingwords.ToString();
         isRacing = true;
         star1.enabled = false;
         star1ImgOn = false;
+        
         star2.enabled = false;
         star2ImgOn = false;
         star3.enabled = false;
@@ -74,8 +88,9 @@ public class winLose : MonoBehaviour
             isRacing = false;
             Message.text = "You are to slow!";
             countingwords++;
-            SceneManager.LoadScene("SampleScene");
             Words.text = countingwords.ToString();
+            SceneManager.LoadScene("SampleScene");
+            
             
         }
 
@@ -105,7 +120,7 @@ public class winLose : MonoBehaviour
 	{
         Message.text = "You Win!";
         Time.timeScale = 0f;
-        txt = GetComponent<Text>();
+        txt = number.GetComponent<Text>();
         isRacing = false;
         MeanStars = Stars / Score;
         if (MeanStars>0f  &&  MeanStars<1f)
@@ -145,6 +160,7 @@ public class winLose : MonoBehaviour
     {
         //currentTime = 0f;
         countingwords++;
+        Words.text = countingwords.ToString();
         if (Soft == 1)
         {
             if (currentTime>0f  &&  currentTime<2f)
@@ -185,9 +201,9 @@ public class winLose : MonoBehaviour
             }
             Score++;
             
-            ScoreText.text = Score.ToString();
-            ScoreText.text = "You are right!";
-            Debug.Log(ScoreText.text);
+            //ScoreText.text = Score.ToString();
+            //Message.text = "You are right!";
+            //Debug.Log(ScoreText.text);
             isRacing = false;
             
             //if (currentTime >= 5f)
@@ -214,6 +230,7 @@ public class winLose : MonoBehaviour
     {
         //currentTime = 0f;
         countingwords++;
+        Words.text = countingwords.ToString();
         if (Hard == 1)
             
         {
@@ -256,25 +273,25 @@ public class winLose : MonoBehaviour
             
             Score++;
             
-            ScoreText.text = Score.ToString();
+            //ScoreText.text = Score.ToString();
             
-            Debug.Log(ScoreText.text);
+            //Debug.Log(ScoreText.text);
             isRacing = false;
             //endTime = currentTime;
             //if (currentTime >= 5f)
             //{
-             //   Message.text = "You're too slow!";
+             //  Message.text = "You're too slow!";
               //  Debug.Log(ScoreText.text);
           //  }
-            currentTime = 0f;
+            //currentTime = 0f;
         }
         else
         {
 			//Score = Score;
             Message.text = "You are Wrong!";
             isRacing = false;
-            currentTime = 0f;
-            isRacing = false;
+            //currentTime = 0f;
+           
 
 
 

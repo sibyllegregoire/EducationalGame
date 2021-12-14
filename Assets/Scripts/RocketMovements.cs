@@ -30,7 +30,7 @@ public class RocketMovements : MonoBehaviour
         //transform.position = position0;
     }
 
-    public void landing()
+    public  void landing()
     {
         Debug.Log("landing");
         transform.localEulerAngles = new Vector3(x: 0, y: 0, z: 0);
